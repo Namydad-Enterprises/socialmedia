@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Namydad | Partners</title>
+  <meta name="description" content="Namydad's Partners and Contact Information">
+  <meta name="author" content="Namydad">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="littlelink/css/normalize.css">
+  <link rel="stylesheet" href="littlelink/css/animate.css">
+  <link rel="icon" href="images/namydas_logo.png">
+  <link rel="stylesheet" href="themes/mono/share.button.css">
+  <link rel="stylesheet" href="themes/mono/brands.css">
+  <link rel="stylesheet" href="themes/mono/skeleton-auto.css">
+  <link rel="stylesheet" href="littlelink/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <!-- Custom Theme Styles (Same as Index) -->
+  <style>
+    :root {
+      --bg-color: #0e0e12; 
+      --text-color: #e0e0e0;
+      --accent-color: #ff3333; 
+      --secondary-accent: #ffcc00; 
+      --tech-blue: #3366ff; 
+      --glass-bg: rgba(14, 14, 18, 0.95);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        linear-gradient(rgba(51, 102, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51, 102, 255, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      color: var(--text-color);
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    h1, h2, .navbar a {
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      color: var(--text-color);
+      text-shadow: 4px 4px 0px var(--accent-color); 
+      font-size: 5rem;
+      line-height: 0.9;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--secondary-accent);
+      border-bottom: none;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: var(--accent-color);
+        margin-top: 5px;
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--glass-bg);
+      border-bottom: 2px solid var(--accent-color);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li { margin: 0 20px; }
+
+    .navbar a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    .navbar a:hover {
+      color: var(--secondary-accent);
+      text-shadow: 0 0 8px var(--secondary-accent);
+      border-color: var(--secondary-accent);
+      background: rgba(255, 204, 0, 0.1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+    }
+
+    /* Mobile Navigation */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      border: 1px solid var(--accent-color);
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all 0.3s;
+      z-index: 1001;
+    }
+    
+    .menu-toggle:hover {
+        background: var(--accent-color);
+        color: #000;
+        box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(14, 14, 18, 0.98);
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        border-bottom: 2px solid var(--accent-color);
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+      }
+
+      .navbar ul.active { display: flex; }
+      .navbar li { margin: 15px 0; text-align: center; }
+      .menu-toggle { display: block; }
+    }
+
+    /* Hero Card */
+    .hero-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid var(--tech-blue);
+        padding: 40px;
+        margin-top: 20px;
+        position: relative;
+        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    }
+    
+    .hero-card::before {
+        content: 'ID: NAMYDAD // PARTNERS';
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 0.8rem;
+        color: var(--tech-blue);
+        opacity: 0.7;
+    }
+
+    /* Partners Specific Styles */
+    .contact-highlight {
+        background: rgba(51, 102, 255, 0.1);
+        border: 2px solid var(--tech-blue);
+        padding: 30px;
+        margin: 40px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .contact-highlight::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 2px;
+        background: var(--tech-blue);
+        box-shadow: 0 0 10px var(--tech-blue);
+        animation: scanline 3s infinite linear;
+    }
+    
+    @keyframes scanline {
+        0% { top: 0; opacity: 0; }
+        50% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .partner-card {
+        background: rgba(255,255,255,0.05);
+        padding: 30px;
+        text-align: center;
+        border: 1px solid var(--secondary-accent);
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .partner-card:hover {
+        background: rgba(255, 204, 0, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+    }
+    
+    .partner-icon {
+        font-size: 3rem;
+        color: var(--secondary-accent);
+        margin-bottom: 15px;
+    }
+    
+    .unaffiliated-status {
+        text-align: center;
+        margin-top: 60px;
+        padding: 20px;
+        border: 1px dashed #555;
+        color: #888;
+    }
+
+    section { padding: 60px 20px; max-width: 960px; margin: 0 auto; }
+    .container { margin-top: 60px; }
+    .rounded-avatar {
+        border: 3px solid var(--secondary-accent);
+        box-shadow: 5px 5px 0px var(--accent-color);
+        border-radius: 50%;
+    }
+    
+    .button {
+        border-radius: 0 !important;
+        border: 1px solid var(--text-color) !important;
+        background: transparent !important;
+        color: var(--text-color) !important;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .button:hover {
+        background: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+        color: #000 !important;
+    }
+    
+    .container{word-break: break-word;}
+  </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#services"><i class="fas fa-microchip"></i> Tech Services</a></li>
+        <li><a href="cosplay.html"><i class="fas fa-mask"></i> Cosplay</a></li>
+        <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.navbar ul');
+        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+    </script>
+
+    <!-- Parallax Background -->
+    <div class="background-container">
+    <section class="parallax-background">
+      <div id="object1" class="object1"></div>
+      <div id="object2" class="object2"></div>
+      <div id="object3" class="object3"></div>
+      <div id="object4" class="object4"></div>
+      <div id="object5" class="object5"></div>
+      <div id="object6" class="object6"></div>
+      <div id="object7" class="object7"></div>
+      <div id="object8" class="object8"></div>
+      <div id="object9" class="object9"></div>
+      <div id="object10" class="object10"></div>
+      <div id="object11" class="object11"></div>
+      <div id="object12" class="object12"></div>
+    </section>
+    </div>
+
+  <div class="container" id="home">
+    <div class="row">
+      <div class="column" style="margin-top: 5%">
+        
+        <!-- HERO SECTION -->
+        <div class="hero-card fadein">
+            <center>
+                <img alt="avatar" class="rounded-avatar" src="images/namydad-frontpage.png" width="150px" height="150px" style="object-fit: cover;">
+                <h1>PARTNERS</h1>
+                <p style="font-size: 1.2rem; color: var(--secondary-accent);">
+                    // ALLIES <br>
+                    // SPONSORS <br>
+                    // COMMUNITY
+                </p>
+            </center>
+        </div>
+        
+        <!-- HIGHLIGHTED CONTACT SECTION -->
+        <div class="contact-highlight fadein">
+            <h2 style="color: var(--tech-blue); border-bottom: none;">INCOMING TRANSMISSION</h2>
+            <p style="font-size: 1.2rem;">Looking to collaborate or sponsor a project?</p>
+            <p>I am currently open to partnerships for upcoming conventions and builds.</p>
+            <br>
+            <div class="button-entrance">
+                <a class="button button-custom_website button button-hover icon-hover" href="mailto:tobias.lammer@namy.dad" style="border-color: var(--tech-blue) !important; color: var(--tech-blue) !important;">
+                    <i class="fas fa-paper-plane"></i> Send Proposal
+                </a>
+            </div>
+        </div>
+
+         PARTNERS GRID -->
+        <section id="partners" class="fadein" style="padding-top: 0;">
+            <h2><i class="fas fa-handshake"></i> Current Allies</h2>
+            <p>Proudly working with these amazing creators and brands.</p>
+            
+            <div class="partners-grid">
+                <!-- Placeholder Partners 
+                <div class="partner-card">
+                    <i class="fas fa-user-astronaut partner-icon"></i>
+                    <h3>Partner Name</h3>
+                    <p>Cosplay Prop Maker</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fas fa-camera-retro partner-icon"></i>
+                    <h3>Studio Name</h3>
+                    <p>Photography</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fas fa-cube partner-icon"></i>
+                    <h3>Brand Name</h3>
+                    <p>3D Printing Supplies</p>
+                </div>
+                -->
+            </div>
+        </section>
+        
+        <!-- UNAFFILIATED STATUS -->
+        <div class="unaffiliated-status fadein">
+            <h3><i class="fas fa-satellite-dish"></i> Status: FREELANCE</h3>
+            <p>Currently unaffiliated with any major organization or agency.</p>
+        </div>
+
+        <div class="footer fadein" style="margin:5% 0px 35px 0px;">
+            <p>&copy; 2025 Namydad. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
