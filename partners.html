@@ -152,8 +152,8 @@
 
     @media (max-width: 768px) {
       .navbar {
-        min-height: 60px;
-        padding: 0.5rem 0;
+        min-height: 60px !important;
+        padding: 0.5rem 0 !important;
       }
 
       .navbar ul {
@@ -174,6 +174,15 @@
       .navbar ul.active { display: flex; }
       .navbar li { margin: 10px 0; text-align: center; }
       .menu-toggle { display: block; }
+      
+      /* Fix for Incoming Transmission on Mobile */
+      .contact-highlight {
+          padding: 15px;
+          margin: 20px 0;
+      }
+      .contact-highlight h2 {
+          font-size: 1.8rem;
+      }
     }
 
     /* Hero Card */
@@ -284,6 +293,81 @@
         border-color: var(--accent-color) !important;
         color: #000 !important;
     }
+
+    /* Back to Top Button */
+    #backToTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2000;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: var(--accent-color);
+        color: black;
+        cursor: pointer;
+        
+        /* Force small size to override global button styles */
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 50px; /* Center icon vertically */
+        text-align: center;
+
+        border-radius: 4px;
+        transition: all 0.3s;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    }
+
+    #backToTop:hover {
+        background-color: var(--secondary-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 0 15px var(--secondary-accent);
+    }
+
+    /* Mission Log Styles */
+    .mission-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px 0;
+    }
+    
+    .mission-item {
+        background: rgba(255,255,255,0.05);
+        border-left: 4px solid var(--tech-blue);
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        transition: all 0.3s;
+    }
+    
+    .mission-item:hover {
+        background: rgba(51, 102, 255, 0.1);
+        transform: translateX(10px);
+    }
+    
+    .mission-date {
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--secondary-accent);
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    .mission-status {
+        float: right;
+        font-size: 0.8rem;
+        padding: 2px 8px;
+        border: 1px solid var(--text-color);
+        border-radius: 4px;
+    }
+    
+    .status-confirmed { color: #0f0; border-color: #0f0; }
+    .status-pending { color: #ffcc00; border-color: #ffcc00; }
+    .status-inactive { color: #888; border-color: #888; }
+    .status-risk { color: #ff3333; border-color: #ff3333; }
     
     .container{word-break: break-word;}
   </style>
@@ -305,14 +389,35 @@
     </nav>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.navbar ul');
-        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('mobile-menu');
+            const navList = document.querySelector('.navbar ul');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+            }
+
+            // Back to Top Button
+            const backToTopButton = document.getElementById("backToTop");
+            if (backToTopButton) {
+                window.onscroll = function() {scrollFunction()};
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        backToTopButton.style.display = "block";
+                    } else {
+                        backToTopButton.style.display = "none";
+                    }
+                }
+                backToTopButton.addEventListener("click", function() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+            }
+        });
     </script>
 
-    <!-- Parallax Background -->
-    <div class="background-container">
-    <section class="parallax-background">
+    <button id="backToTop" title="Go to top"><i class="fas fa-rocket"></i></button>
+
+  <div class="container" id="home">
       <div id="object1" class="object1"></div>
       <div id="object2" class="object2"></div>
       <div id="object3" class="object3"></div>
@@ -325,10 +430,7 @@
       <div id="object10" class="object10"></div>
       <div id="object11" class="object11"></div>
       <div id="object12" class="object12"></div>
-    </section>
-    </div>
 
-  <div class="container" id="home">
     <div class="row">
       <div class="column" style="margin-top: 5%">
         
@@ -357,6 +459,110 @@
                 </a>
             </div>
         </div>
+
+        <!-- MISSION LOG (EVENTS) -->
+        <section id="mission-log" class="fadein" style="padding-top: 0;">
+            <h2><i class="fas fa-map-marked-alt"></i> Mission Log</h2>
+            <p>Upcoming deployments and convention appearances.</p>
+            
+            <div class="mission-timeline">
+                <div class="mission-item">
+                    <span class="mission-status status-inactive">OUT OF PLANNING</span>
+                    <div class="mission-date">2026.03.19 - 03.22</div>
+                    <h3>Leipziger Buchmesse</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Leipzig</p>
+                    <p>Priority: Low</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-confirmed">ON TRACK</span>
+                    <div class="mission-date">2026.05.16 - 05.17</div>
+                    <h3>NonkiCon</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Speyer</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-risk">AT RISK</span>
+                    <div class="mission-date">2026.05.29 - 05.31</div>
+                    <h3>DoKomi</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Düsseldorf</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-confirmed">ON TRACK</span>
+                    <div class="mission-date">2026.07.04 - 07.05</div>
+                    <h3>CosDay²</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Frankfurt</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-confirmed">ON TRACK</span>
+                    <div class="mission-date">2026.07.31 - 08.02</div>
+                    <h3>AniMagic</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mannheim</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-risk">AT RISK</span>
+                    <div class="mission-date">2026.08.14 - 08.16</div>
+                    <h3>Main Matsuri</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Offenbach</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-inactive">OUT OF PLANNING</span>
+                    <div class="mission-date">2026.08.26 - 08.30</div>
+                    <h3>Gamescom</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Cologne</p>
+                    <p>Priority: Low</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-risk">AT RISK</span>
+                    <div class="mission-date">2026.09.04 - 09.06</div>
+                    <h3>Connichi</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Wiesbaden</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-risk">AT RISK</span>
+                    <div class="mission-date">2026.10.23 - 10.25</div>
+                    <h3>MEX</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Berlin</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-risk">AT RISK</span>
+                    <div class="mission-date">2026.11.06 - 11.08</div>
+                    <h3>Kaidan</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mainz</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-confirmed">ON TRACK</span>
+                    <div class="mission-date">2026.11.28 - 11.29</div>
+                    <h3>Comic Con</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Stuttgart</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <span class="mission-status status-confirmed">ON TRACK</span>
+                    <div class="mission-date">2026.12.28</div>
+                    <h3>Geekworld</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mannheim</p>
+                    <p>Priority: Must Do</p>
+                </div>
+            </div>
+        </section>
 
           <!-- PARTNERS GRID -->
         <section id="partners" class="fadein" style="padding-top: 0;">

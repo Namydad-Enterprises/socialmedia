@@ -321,6 +321,39 @@
         border-color: var(--accent-color) !important;
         color: #000 !important;
     }
+
+    /* Back to Top Button */
+    #backToTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2000;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: var(--accent-color);
+        color: black;
+        cursor: pointer;
+        
+        /* Force small size to override global button styles */
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 50px; /* Center icon vertically */
+        text-align: center;
+
+        border-radius: 4px;
+        transition: all 0.3s;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    }
+
+    #backToTop:hover {
+        background-color: var(--secondary-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 0 15px var(--secondary-accent);
+    }
     
     .container{word-break: break-word;}
   </style>
@@ -342,14 +375,35 @@
     </nav>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.navbar ul');
-        menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById('mobile-menu');
+            const navList = document.querySelector('.navbar ul');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+            }
+
+            // Back to Top Button
+            const backToTopButton = document.getElementById("backToTop");
+            if (backToTopButton) {
+                window.onscroll = function() {scrollFunction()};
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        backToTopButton.style.display = "block";
+                    } else {
+                        backToTopButton.style.display = "none";
+                    }
+                }
+                backToTopButton.addEventListener("click", function() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+            }
+        });
     </script>
 
-    <!-- Parallax Background -->
-    <div class="background-container">
-    <section class="parallax-background">
+    <button id="backToTop" title="Go to top"><i class="fas fa-rocket"></i></button>
+
+  <div class="container" id="home">
       <div id="object1" class="object1"></div>
       <div id="object2" class="object2"></div>
       <div id="object3" class="object3"></div>
