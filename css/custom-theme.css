@@ -1110,3 +1110,196 @@ section {
 }
 
 .container{word-break: break-word;}
+
+/* ===== PHASE 3: SELECTED MICRO-INTERACTIONS ===== */
+
+/* Fix LittleLink hover icon dark background issue */
+.hvr-icon,
+.button .hvr-icon,
+.icon-hover .hvr-icon,
+.button img.icon {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Disable icon scaling/bounce effects that cause visual issues */
+.button:hover .hvr-icon,
+.button:active .hvr-icon,
+.button:focus .hvr-icon {
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Avatar Hover Effect */
+.rounded-avatar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.rounded-avatar:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 
+        0 0 30px var(--accent-color),
+        5px 5px 0px var(--secondary-accent);
+    border-color: var(--accent-color);
+}
+
+/* Service Card Corner Accent */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid var(--tech-blue);
+    border-right: 2px solid var(--tech-blue);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover::before {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    border-color: var(--secondary-accent);
+}
+
+/* ===== PHASE 5: PERFORMANCE & ACCESSIBILITY ===== */
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .particle {
+        display: none !important;
+    }
+    
+    body::before,
+    body::after {
+        display: none !important;
+    }
+}
+
+/* GPU acceleration for animated elements */
+.particle,
+.fadein,
+.button,
+.service-card,
+.partner-card,
+.gallery-item,
+.mtg-card,
+.anime-card,
+.rounded-avatar {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Remove will-change after animation completes (via JS class) */
+.animation-complete {
+    will-change: auto;
+}
+
+/* Optimize font rendering */
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contain layout reflows */
+.services-grid,
+.partners-grid,
+.gallery-grid,
+.mtg-grid,
+.anime-grid {
+    contain: layout style;
+}
+
+/* Lazy load images that are off-screen */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([src=""]) {
+    opacity: 1;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible {
+    outline: 2px solid var(--secondary-accent);
+    outline-offset: 3px;
+}
+
+/* Skip to content link (hidden until focused) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: #000;
+    padding: 8px 16px;
+    z-index: 100000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --bg-color: #000;
+        --text-color: #fff;
+        --accent-color: #ff0000;
+        --secondary-accent: #ffff00;
+        --tech-blue: #00ffff;
+    }
+    
+    .button {
+        border-width: 2px !important;
+    }
+    
+    body::before,
+    body::after {
+        display: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body::before,
+    body::after,
+    .particles-container,
+    .navbar,
+    #backToTop,
+    .parallax-bg {
+        display: none !important;
+    }
+    
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
+    }
+    
+    .button {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+    }
+}

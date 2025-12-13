@@ -34,6 +34,9 @@
 </head>
 <body>
 
+    <!-- Skip to main content for accessibility -->
+    <a href="#partners-content" class="skip-link">Skip to main content</a>
+
     <!-- Floating Particles -->
     <div class="particles-container" id="particles"></div>
 
@@ -90,6 +93,32 @@
                     particlesContainer.appendChild(particle);
                 }
             }
+
+            // Scroll Reveal Animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        setTimeout(() => entry.target.classList.add('animation-complete'), 600);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('.fadein, .partner-card').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // Lazy load image handler
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                if (img.complete) img.classList.add('loaded');
+                else img.addEventListener('load', () => img.classList.add('loaded'));
+            });
         });
     </script>
 
