@@ -34,6 +34,9 @@
 </head>
 <body>
 
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="menu-toggle" id="mobile-menu">
@@ -73,6 +76,20 @@
                     document.documentElement.scrollTop = 0;
                 });
             }
+
+            // Create Floating Particles
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                const particleCount = 30;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                    particle.style.animationDelay = (Math.random() * 20) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
         });
     </script>
 
@@ -100,7 +117,7 @@
         <!-- HERO SECTION -->
         <div class="hero-card fadein">
             <center>
-                <h1>COSPLAY ARCHIVE</h1>
+                <h1 data-text="COSPLAY ARCHIVE">COSPLAY ARCHIVE</h1>
                 <p style="font-size: 1.2rem; color: var(--secondary-accent);">
                     // CRAFTING <br>
                     // MODELING <br>

@@ -64,6 +64,9 @@
 </head>
 <body>
 
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="menu-toggle" id="mobile-menu">
@@ -109,6 +112,20 @@
                     document.documentElement.scrollTop = 0;
                 });
             }
+
+            // Create Floating Particles
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                const particleCount = 30;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                    particle.style.animationDelay = (Math.random() * 20) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
         });
     </script>
     <!-- End of parallax background animations -->
@@ -143,7 +160,7 @@
                 <img alt="avatar" class="rounded-avatar" src="images/namydad-frontpage.png" width="150px" height="150px" style="object-fit: cover;" loading="lazy">
                 
                 <!-- Your Name -->
-                <h1>NAMYDAD</h1>
+                <h1 data-text="NAMYDAD">NAMYDAD</h1>
                 
                 <!-- Short Bio -->
                 <p style="font-size: 1.2rem; color: var(--secondary-accent);">

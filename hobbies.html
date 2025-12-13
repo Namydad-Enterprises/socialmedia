@@ -36,6 +36,9 @@
 </head>
 <body>
 
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="menu-toggle" id="mobile-menu">
@@ -81,6 +84,20 @@
                     document.documentElement.scrollTop = 0;
                 });
             }
+
+            // Create Floating Particles
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                const particleCount = 30;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                    particle.style.animationDelay = (Math.random() * 20) + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
         });
     </script>
 
@@ -107,12 +124,10 @@
         
         <!-- HERO SECTION -->
         <div class="hero-card fadein">
-            <div style="text-align: center;">
-                <h1>HOBBIES & INTERESTS</h1>
-                <p style="font-size: 1.2rem; color: var(--secondary-accent);">
-                    // ANIME // GAMING // MAGIC: THE GATHERING
-                </p>
-            </div>
+            <h1 data-text="HOBBIES & INTERESTS">HOBBIES & INTERESTS</h1>
+            <p style="font-size: 1.2rem; color: var(--secondary-accent);">
+                // ANIME // GAMING // MAGIC: THE GATHERING
+            </p>
         </div>
 
          <!-- TOP 4 ANIME GRID -->
@@ -159,7 +174,7 @@
                         <div class="flip-card-front">
                             <img src="images/external/lulu.jpg" alt="Lulu Art" class="mtg-art" loading="lazy">
                             <div class="mtg-info">
-                                <h4 style="margin:0; color: var(--secondary-accent);">Lulu, Loyal Hollyphant</h4>
+                                <h4>Lulu, Loyal Hollyphant</h4>
                                 <span class="deck-tag">Blink</span>
                                 <div style="margin-top:5px;">
                                     <span style="font-size: 0.7rem; color: #0f0;">BRACKET: 2</span>
@@ -169,7 +184,7 @@
                         <div class="flip-card-back">
                             <img src="images/external/candlekeep.jpg" alt="Candlekeep Sage" class="mtg-art" loading="lazy">
                              <div class="mtg-info">
-                                <h4 style="margin:0; color: var(--secondary-accent);">Candlekeep Sage</h4>
+                                <h4>Candlekeep Sage</h4>
                                 <p style="font-size: 0.8rem; margin: 5px 0;">Background</p>
                             </div>
                         </div>
@@ -180,7 +195,7 @@
                 <div class="mtg-card" onclick="window.open('https://archidekt.com/decks/16461555/namydad_limit_break_final_fantasy_commander', '_blank')">
                     <img src="images/external/cloud.jpg" alt="Cloud Art" class="mtg-art" loading="lazy">
                     <div class="mtg-info">
-                        <h4 style="margin:0; color: var(--secondary-accent);">Cloud, Ex-SOLDIER</h4>
+                        <h4>Cloud, Ex-SOLDIER</h4>
                         <span class="deck-tag">Voltron</span>
                         <div style="margin-top:5px;">
                             <span style="font-size: 0.7rem; color: #0f0;">BRACKET: 2</span>
@@ -197,7 +212,7 @@
                     <div class="mtg-card" onclick="window.open('https://archidekt.com/decks/YOUR_DECK_ID_3', '_blank')" style="opacity: 0.8; border-style: dashed; max-width: 300px; margin: 0 auto;">
                         <img src="images/external/jodah.jpg" alt="Jodah Art" class="mtg-art" style="filter: grayscale(60%);" loading="lazy">
                         <div class="mtg-info">
-                            <h4 style="margin:0; color: var(--secondary-accent);">Jodah, Archmage Eternal</h4>
+                            <h4>Jodah, Archmage Eternal</h4>
                             <span class="deck-tag">Alternate Win Con</span>
                             <div style="margin-top:5px;">
                                 <span style="font-size: 0.7rem; color: #ffcc00;">BRACKET: 3</span>
