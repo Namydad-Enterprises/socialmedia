@@ -354,6 +354,59 @@
         transform: translateY(-3px);
         box-shadow: 0 0 15px var(--secondary-accent);
     }
+
+    /* Mission Log Styles */
+    .mission-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px 0;
+    }
+    
+    .mission-item {
+        background: rgba(255,255,255,0.05);
+        border-left: 4px solid var(--tech-blue);
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        transition: all 0.3s;
+    }
+    
+    .mission-item:hover {
+        background: rgba(51, 102, 255, 0.1);
+        transform: translateX(10px);
+    }
+
+    /* Flexbox Header for better layout */
+    .mission-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 5px;
+    }
+    
+    .mission-date {
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--secondary-accent);
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    
+    .mission-status {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+        border: 1px solid var(--text-color);
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .status-confirmed { color: #0f0; border-color: #0f0; }
+    .status-pending { color: #ffcc00; border-color: #ffcc00; }
+    .status-inactive { color: #888; border-color: #888; }
+    .status-risk { color: #ff3333; border-color: #ff3333; }
     
     .container{word-break: break-word;}
   </style>
@@ -475,6 +528,134 @@
                     <span class="cosplan-status status-planning">GATHERING ITEMS</span>
                 </li>
             </ul>
+        </section>
+
+        <!-- MISSION LOG (EVENTS) -->
+        <section id="mission-log" class="fadein" style="padding-top: 0;">
+            <h2><i class="fas fa-map-marked-alt"></i> Mission Log</h2>
+            <p>Upcoming deployments and convention appearances.</p>
+            
+            <div class="mission-timeline">
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.03.19 - 03.22</div>
+                        <span class="mission-status status-inactive">OUT OF PLANNING</span>
+                    </div>
+                    <h3>Leipziger Buchmesse</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Leipzig</p>
+                    <p>Priority: Low</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.05.16 - 05.17</div>
+                        <span class="mission-status status-confirmed">ON TRACK</span>
+                    </div>
+                    <h3>NonkiCon</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Speyer</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.05.29 - 05.31</div>
+                        <span class="mission-status status-risk">AT RISK</span>
+                    </div>
+                    <h3>DoKomi</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Düsseldorf</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.07.04 - 07.05</div>
+                        <span class="mission-status status-confirmed">ON TRACK</span>
+                    </div>
+                    <h3>CosDay²</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Frankfurt</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.07.31 - 08.02</div>
+                        <span class="mission-status status-confirmed">ON TRACK</span>
+                    </div>
+                    <h3>AniMagic</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mannheim</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.08.14 - 08.16</div>
+                        <span class="mission-status status-risk">AT RISK</span>
+                    </div>
+                    <h3>Main Matsuri</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Offenbach</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.08.26 - 08.30</div>
+                        <span class="mission-status status-inactive">OUT OF PLANNING</span>
+                    </div>
+                    <h3>Gamescom</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Cologne</p>
+                    <p>Priority: Low</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.09.04 - 09.06</div>
+                        <span class="mission-status status-risk">AT RISK</span>
+                    </div>
+                    <h3>Connichi</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Wiesbaden</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.10.23 - 10.25</div>
+                        <span class="mission-status status-risk">AT RISK</span>
+                    </div>
+                    <h3>MEX</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Berlin</p>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.11.06 - 11.08</div>
+                        <span class="mission-status status-risk">AT RISK</span>
+                    </div>
+                    <h3>Kaidan</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mainz</p>
+                    <p>Priority: Medium</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.11.28 - 11.29</div>
+                        <span class="mission-status status-confirmed">ON TRACK</span>
+                    </div>
+                    <h3>Comic Con</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Stuttgart</p>
+                    <p>Priority: Must Do</p>
+                </div>
+
+                <div class="mission-item">
+                    <div class="mission-header">
+                        <div class="mission-date">2026.12.28</div>
+                        <span class="mission-status status-confirmed">ON TRACK</span>
+                    </div>
+                    <h3>Geekworld</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mannheim</p>
+                    <p>Priority: Must Do</p>
+                </div>
+            </div>
         </section>
 
         <!-- GALLERY SECTION -->
