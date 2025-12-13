@@ -53,6 +53,7 @@
         <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
         <li><a href="stats.html"><i class="fas fa-chart-bar"></i> Stats</a></li>
         <li><a href="recommendations.html"><i class="fas fa-star"></i> Recs</a></li>
+        <li><a href="awards.html"><i class="fas fa-trophy"></i> Awards</a></li>
         <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
@@ -170,32 +171,6 @@
             </div>
         </div>
 
-          <!-- PARTNERS GRID -->
-        <section id="partners" class="fadein" style="padding-top: 0;">
-            <h2><i class="fas fa-handshake"></i> Current Allies</h2>
-            <p>Proudly working with these amazing creators and brands.</p>
-            
-            <div class="partners-grid">
-                <!-- Placeholder Partners 
-                <div class="partner-card">
-                    <i class="fas fa-user-astronaut partner-icon"></i>
-                    <h3>Partner Name</h3>
-                    <p>Cosplay Prop Maker</p>
-                </div>
-                <div class="partner-card">
-                    <i class="fas fa-camera-retro partner-icon"></i>
-                    <h3>Studio Name</h3>
-                    <p>Photography</p>
-                </div>
-                <div class="partner-card">
-                    <i class="fas fa-cube partner-icon"></i>
-                    <h3>Brand Name</h3>
-                    <p>3D Printing Supplies</p>
-                </div>
-                -->
-            </div>
-        </section>
-        
         <!-- ALLIED FREQUENCIES - Friend Links -->
         <section id="friends" class="fadein" style="padding-top: 40px;">
             <h2><i class="fas fa-broadcast-tower"></i> Allied Frequencies</h2>
@@ -247,12 +222,125 @@
                 </a>
             </div>
         </section>
+
+          <!-- PARTNERS GRID -->
+        <section id="partners" class="fadein" style="padding-top: 0;">
+            <h2><i class="fas fa-handshake"></i> Current Allies</h2>
+            <p>Proudly working with these amazing creators and brands.</p>
+            
+            <div class="partners-grid">
+                <!-- Placeholder Partners 
+                <div class="partner-card">
+                    <i class="fas fa-user-astronaut partner-icon"></i>
+                    <h3>Partner Name</h3>
+                    <p>Cosplay Prop Maker</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fas fa-camera-retro partner-icon"></i>
+                    <h3>Studio Name</h3>
+                    <p>Photography</p>
+                </div>
+                <div class="partner-card">
+                    <i class="fas fa-cube partner-icon"></i>
+                    <h3>Brand Name</h3>
+                    <p>3D Printing Supplies</p>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <!-- LOOKING FOR ALLIES -->
+        <div class="recruit-banner fadein">
+            <div class="recruit-content">
+                <div class="recruit-signal">
+                    <span class="signal-ping"></span>
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <div class="recruit-info">
+                    <h3>SEARCHING FOR NEW FREQUENCIES...</h3>
+                    <p>Want to join the crew? I'm always looking for fellow travelers, collaborators, and friends in the community. Photographers, cosplayers, artists, gamers – all signals welcome.</p>
+                </div>
+                <a href="mailto:tobias.lammer@namy.dad" class="recruit-btn">
+                    <i class="fas fa-broadcast-tower"></i> ESTABLISH CONTACT
+                </a>
+            </div>
+        </div>
         
         <!-- UNAFFILIATED STATUS -->
         <div class="unaffiliated-status fadein">
             <h3><i class="fas fa-satellite-dish"></i> Status: FREELANCE</h3>
             <p>Currently unaffiliated with any major organization or agency.</p>
         </div>
+
+        <!-- CHARITY SPOTLIGHT -->
+        <div class="charity-banner fadein" id="charity-spotlight">
+            <!-- Content loaded by JavaScript based on month -->
+        </div>
+
+        <!-- FOSS TOOL OF THE MONTH -->
+        <div class="foss-banner fadein" id="foss-spotlight">
+            <!-- Content loaded by JavaScript based on month -->
+        </div>
+
+        <script>
+            (function() {
+                const charities = [
+                    {
+                        name: "Doctors Without Borders",
+                        description: "Medical aid worldwide - providing emergency medical care where it's needed most.",
+                        link: "https://www.doctorswithoutborders.org",
+                        icon: "fa-user-doctor"
+                    },
+                    {
+                        name: "Kindernothilfe",
+                        description: "Sustainable improvement of living conditions for children around the world.",
+                        link: "https://www.kindernothilfe.de/en",
+                        icon: "fa-children"
+                    }
+                ];
+
+                const fossTools = [
+                    {
+                        name: "AdNauseam",
+                        description: "Ad-blocker and anti-ad tracking tool. Protects your privacy while fighting surveillance capitalism.",
+                        link: "https://adnauseam.io",
+                        icon: "fa-shield-halved"
+                    }
+                ];
+
+                const month = new Date().getMonth();
+                
+                const charity = charities[month % charities.length];
+                document.getElementById('charity-spotlight').innerHTML = `
+                    <div class="charity-content">
+                        <div class="charity-icon"><i class="fas ${charity.icon}"></i></div>
+                        <div class="charity-info">
+                            <span class="charity-label">// MONTHLY SIGNAL BOOST</span>
+                            <h4>${charity.name}</h4>
+                            <p>${charity.description}</p>
+                        </div>
+                        <a href="${charity.link}" target="_blank" rel="noopener" class="charity-link">
+                            <i class="fas fa-external-link-alt"></i> Learn More
+                        </a>
+                    </div>
+                `;
+
+                const tool = fossTools[month % fossTools.length];
+                document.getElementById('foss-spotlight').innerHTML = `
+                    <div class="foss-content">
+                        <div class="foss-icon"><i class="fas ${tool.icon}"></i></div>
+                        <div class="foss-info">
+                            <span class="foss-label">// FOSS TOOL OF THE MONTH</span>
+                            <h4>${tool.name}</h4>
+                            <p>${tool.description}</p>
+                        </div>
+                        <a href="${tool.link}" target="_blank" rel="noopener" class="foss-link">
+                            <i class="fas fa-download"></i> Check It Out
+                        </a>
+                    </div>
+                `;
+            })();
+        </script>
 
         <div class="footer fadein" style="margin:5% 0px 35px 0px;">
             <p>&copy; 2025 Namydad. All rights reserved.</p>

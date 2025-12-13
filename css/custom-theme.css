@@ -1872,3 +1872,701 @@ button:focus-visible,
         text-align: center;
     }
 }
+
+/* ===== CHARITY SPOTLIGHT BANNER ===== */
+
+.charity-banner {
+    margin-top: 50px;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.1) 0%, rgba(51, 102, 255, 0.1) 100%);
+    border: 1px solid var(--accent-color);
+    border-left: 4px solid var(--secondary-accent);
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.charity-banner::before {
+    content: '💝';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+.charity-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.charity-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-accent);
+    min-width: 60px;
+    text-align: center;
+}
+
+.charity-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.charity-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--tech-blue);
+    letter-spacing: 2px;
+}
+
+.charity-info h4 {
+    margin: 5px 0 10px;
+    color: var(--secondary-accent);
+    font-size: 1.3rem;
+}
+
+.charity-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.charity-link {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+    text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.charity-link:hover {
+    background: var(--secondary-accent);
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .charity-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .charity-icon {
+        font-size: 2rem;
+    }
+    
+    .charity-info {
+        text-align: center;
+    }
+    
+    .charity-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===== FOSS TOOL OF THE MONTH ===== */
+
+.foss-banner {
+    margin-top: 25px;
+    background: linear-gradient(135deg, rgba(51, 102, 255, 0.1) 0%, rgba(0, 255, 0, 0.05) 100%);
+    border: 1px solid var(--tech-blue);
+    border-left: 4px solid var(--tech-blue);
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.foss-banner::before {
+    content: '🛠️';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+.foss-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.foss-icon {
+    font-size: 2.5rem;
+    color: var(--tech-blue);
+    min-width: 60px;
+    text-align: center;
+}
+
+.foss-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.foss-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: #00ff00;
+    letter-spacing: 2px;
+}
+
+.foss-info h4 {
+    margin: 5px 0 10px;
+    color: var(--tech-blue);
+    font-size: 1.3rem;
+}
+
+.foss-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.foss-link {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--tech-blue);
+    color: var(--tech-blue);
+    text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.foss-link:hover {
+    background: var(--tech-blue);
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .foss-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .foss-icon {
+        font-size: 2rem;
+    }
+    
+    .foss-info {
+        text-align: center;
+    }
+    
+    .foss-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===== LOOKING FOR ALLIES BANNER ===== */
+
+.recruit-banner {
+    margin-top: 50px;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.05) 0%, rgba(255, 204, 0, 0.1) 50%, rgba(51, 102, 255, 0.05) 100%);
+    border: 2px dashed var(--secondary-accent);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.recruit-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 204, 0, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(51, 102, 255, 0.1) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+.recruit-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.recruit-signal {
+    position: relative;
+    font-size: 3rem;
+    color: var(--secondary-accent);
+    min-width: 80px;
+    text-align: center;
+}
+
+.signal-ping {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--secondary-accent);
+    border-radius: 50%;
+    animation: ping 2s ease-out infinite;
+}
+
+@keyframes ping {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+.recruit-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.recruit-info h3 {
+    color: var(--secondary-accent);
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+.recruit-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.recruit-btn {
+    padding: 15px 30px;
+    background: var(--secondary-accent);
+    border: none;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recruit-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .recruit-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .recruit-signal {
+        font-size: 2.5rem;
+    }
+    
+    .recruit-info {
+        text-align: center;
+    }
+    
+    .recruit-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .recruit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Formal variant for main page */
+.recruit-formal {
+    border: 2px solid var(--tech-blue);
+    border-style: solid;
+    background: linear-gradient(135deg, rgba(51, 102, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(51, 102, 255, 0.08) 100%);
+}
+
+.recruit-formal .recruit-signal {
+    color: var(--tech-blue);
+}
+
+.recruit-formal .signal-ping {
+    border-color: var(--tech-blue);
+}
+
+.recruit-formal .recruit-info h3 {
+    color: var(--tech-blue);
+}
+
+.recruit-formal .recruit-btn {
+    background: var(--tech-blue);
+}
+
+.recruit-formal .recruit-btn:hover {
+    background: var(--secondary-accent);
+    color: #000;
+    box-shadow: 0 5px 20px rgba(51, 102, 255, 0.3);
+}
+
+/* Sponsor variant for main page */
+.recruit-sponsor {
+    margin-top: 25px;
+    border: 2px solid var(--accent-color);
+    border-style: solid;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.08) 0%, rgba(255, 204, 0, 0.05) 50%, rgba(255, 51, 51, 0.08) 100%);
+}
+
+.recruit-sponsor .recruit-signal {
+    color: var(--accent-color);
+}
+
+.recruit-sponsor .signal-ping {
+    border-color: var(--accent-color);
+}
+
+.recruit-sponsor .recruit-info h3 {
+    color: var(--accent-color);
+}
+
+.recruit-sponsor .recruit-btn {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.recruit-sponsor .recruit-btn:hover {
+    background: var(--secondary-accent);
+    color: #000;
+    box-shadow: 0 5px 20px rgba(255, 51, 51, 0.3);
+}
+
+/* ===== 2025 AWARDS PAGE ===== */
+
+.awards-hero {
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 51, 51, 0.05) 50%, rgba(51, 102, 255, 0.1) 100%);
+    border-color: var(--secondary-accent);
+}
+
+.awards-trophy {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    animation: trophy-bounce 2s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Flip Card Container */
+.award-card {
+    position: relative;
+    height: 320px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.award-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.award-card.flipped .award-card-inner {
+    transform: rotateY(180deg);
+}
+
+.award-card-front,
+.award-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.award-card-front {
+    transform: rotateY(0deg);
+}
+
+.award-card-back {
+    transform: rotateY(180deg);
+}
+
+/* FRONT OF CARD - Category only */
+.award-card-front {
+    background: rgba(0, 0, 0, 0.95);
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/011/351/201/small_2x/elegant-golden-scene-diagonal-glowing-with-lighting-effect-sparkle-on-black-background-template-premium-award-design-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.award-card-front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent), var(--tech-blue));
+    z-index: 2;
+}
+
+.award-front-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.award-front-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    text-align: center;
+}
+
+.award-category {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--tech-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.award-tap-hint {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 10px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.award-tap-hint i {
+    margin-right: 5px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* BACK OF CARD - Winner reveal with image */
+.award-card-back {
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.award-card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+}
+
+.award-card-back::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-accent), var(--tech-blue));
+    z-index: 2;
+}
+
+.award-back-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+}
+
+.award-ribbon {
+    background: var(--secondary-accent);
+    color: #000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    padding: 8px 25px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.award-ribbon.special {
+    background: linear-gradient(90deg, #ff3333, #ff9900, #ffcc00);
+    background-size: 200% 100%;
+    animation: shimmer-gradient 2s linear infinite;
+}
+
+.award-ribbon.pending {
+    background: var(--tech-blue);
+    color: #fff;
+}
+
+@keyframes shimmer-gradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.award-winner {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--secondary-accent);
+    margin: 15px 0;
+    line-height: 1.2;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+}
+
+.award-note {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin: 0;
+    font-style: italic;
+}
+
+.award-note i {
+    margin-left: 5px;
+}
+
+/* Card Variants */
+.award-card.highlight .award-card-front {
+    border-color: var(--accent-color);
+}
+
+.award-card.highlight .award-card-back {
+    border-color: var(--accent-color);
+}
+
+.award-card.highlight .award-winner {
+    color: var(--accent-color);
+    text-shadow: 0 0 30px rgba(255, 51, 51, 0.5);
+}
+
+.award-card.coming-soon .award-card-front,
+.award-card.coming-soon .award-card-back {
+    border-style: dashed;
+    background: linear-gradient(135deg, rgba(51, 102, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.award-card.coming-soon .award-card-front::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(51, 102, 255, 0.2) 100%);
+}
+
+.award-card.coming-soon .award-winner {
+    color: var(--tech-blue);
+}
+
+/* Hover effect for non-flipped cards */
+.award-card:not(.flipped):hover {
+    transform: translateY(-5px) rotateY(5deg);
+}
+
+.award-card:not(.flipped):hover .award-card-front {
+    border-color: var(--secondary-accent);
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.2);
+}
+
+/* Announcement Banner */
+.announcement-banner {
+    background: linear-gradient(90deg, var(--secondary-accent), #ff9900, var(--secondary-accent));
+    background-size: 200% 100%;
+    animation: gradient-scroll 3s linear infinite;
+    padding: 12px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradient-scroll {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.announcement-banner a {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.announcement-banner a:hover {
+    text-decoration: underline;
+}
+
+.announcement-banner .announcement-icon {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@media (max-width: 768px) {
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .awards-trophy {
+        font-size: 3.5rem;
+    }
+    
+    .award-card {
+        height: 280px;
+    }
+    
+    .award-winner {
+        font-size: 1.6rem;
+    }
+    
+    .award-category {
+        font-size: 0.75rem;
+    }
+    
+    .award-ribbon {
+        font-size: 0.8rem;
+        padding: 6px 20px;
+    }
+}
