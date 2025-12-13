@@ -1,6 +1,22 @@
 /* Custom Sci-Fi Theme Overrides */
 /* Extracted from index.html */
 
+/* ===== GLOBAL OVERFLOW FIX ===== */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    padding-top: 90px; /* Account for fixed navbar height */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Smaller navbar on mobile */
+    }
+}
+
 /* ===== PHASE 1: VISUAL ENHANCEMENTS ===== */
 
 /* Custom Sci-Fi Cursor */
@@ -1629,4 +1645,230 @@ button:focus-visible,
 
 .review-rec::before {
     content: '→ ';
+}
+
+/* ===== MOBILE RESPONSIVE FIXES ===== */
+
+@media (max-width: 768px) {
+    /* Hero card mobile */
+    .hero-card {
+        padding: 20px 15px;
+        clip-path: none;
+        margin: 10px 0;
+    }
+    
+    .hero-card h1 {
+        font-size: 2rem !important;
+    }
+    
+    .hero-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    .hero-card::before {
+        font-size: 0.6rem;
+        top: 3px;
+        right: 5px;
+    }
+    
+    /* Stats grid mobile */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 15px 10px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    
+    .stat-detail {
+        font-size: 0.7rem;
+    }
+    
+    .stats-category h3 {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+    
+    /* Reviews grid mobile */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .review-filters {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .review-cover {
+        height: 150px;
+    }
+    
+    .review-content {
+        padding: 15px;
+    }
+    
+    .review-title {
+        font-size: 1.1rem;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .review-text {
+        font-size: 0.9rem;
+    }
+    
+    .review-tags {
+        gap: 5px;
+    }
+    
+    .review-tag {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+    }
+    
+    /* Friends grid mobile */
+    .friends-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .friend-card-content {
+        padding: 15px;
+        min-height: 140px;
+    }
+    
+    .friend-card h3 {
+        font-size: 1rem;
+    }
+    
+    .friend-role {
+        font-size: 0.65rem;
+    }
+    
+    .friend-card p {
+        font-size: 0.8rem;
+    }
+    
+    /* Partners grid mobile */
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Gallery grid mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    /* Service cards mobile */
+    .service-card {
+        padding: 20px 15px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Hobbies sections mobile */
+    .hobby-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* General text sizing */
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Footer on mobile */
+    .footer {
+        margin: 20px 0 !important;
+        padding: 15px;
+    }
+    
+    /* Back to top button */
+    #backToTop {
+        right: 15px;
+        bottom: 15px;
+        padding: 10px 15px;
+    }
+    
+    /* Unaffiliated status mobile */
+    .unaffiliated-status {
+        padding: 20px 15px;
+        margin-top: 30px !important;
+    }
+    
+    .unaffiliated-status h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .friends-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-card h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .navbar ul {
+        padding: 15px 0 40px 0;
+    }
+    
+    .navbar li a {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        text-align: center;
+    }
 }
