@@ -1784,6 +1784,11 @@ button:focus-visible,
     .service-card {
         padding: 20px 15px;
     }
+
+    .service-card p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
     
     .service-card h3 {
         font-size: 1.3rem;
@@ -1962,10 +1967,17 @@ button:focus-visible,
     .charity-info {
         text-align: center;
     }
+
+    .charity-info p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
     
     .charity-link {
         width: 100%;
         text-align: center;
+        white-space: normal;
+        box-sizing: border-box;
     }
 }
 
@@ -2058,10 +2070,17 @@ button:focus-visible,
     .foss-info {
         text-align: center;
     }
+
+    .foss-info p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
     
     .foss-link {
         width: 100%;
         text-align: center;
+        white-space: normal;
+        box-sizing: border-box;
     }
 }
 
@@ -2176,6 +2195,7 @@ button:focus-visible,
     .recruit-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
     
     .recruit-signal {
@@ -2184,6 +2204,13 @@ button:focus-visible,
     
     .recruit-info {
         text-align: center;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .recruit-info p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .recruit-info h3 {
@@ -2193,6 +2220,21 @@ button:focus-visible,
     .recruit-btn {
         width: 100%;
         justify-content: center;
+        white-space: normal;
+        text-align: center;
+        padding: 15px 20px;
+        box-sizing: border-box;
+    }
+    
+    .recruit-banner {
+        padding: 20px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .recruit-banner + .recruit-banner {
+        z-index: 0;
     }
 }
 
