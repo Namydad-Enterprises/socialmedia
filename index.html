@@ -19,19 +19,19 @@
   <!-- This shows a preview for title, description and avatar image of users profiles if shared on social media sites -->
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://namydad.xyz/">
+    <meta property="og:url" content="https://namy.dad/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Namydad | Tech & Cosplay">
     <meta property="og:description" content="Welcome, I'm Namydad. Tech Services, Cosplay Portfolio, and Partners.">
-    <meta property="og:image" content="https://namydad.xyz/images/Namydad_S.ico">
+    <meta property="og:image" content="https://namy.dad/images/Namydad_S.ico">
         
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="namydad.xyz">
-    <meta property="twitter:url" content="https://namydad.xyz/">
+    <meta property="twitter:domain" content="namy.dad">
+    <meta property="twitter:url" content="https://namy.dad/">
     <meta name="twitter:title" content="Namydad | Tech & Cosplay">
     <meta name="twitter:description" content="Welcome, I'm Namydad and this is where you can find most my Pages to keep up to date.">
-    <meta name="twitter:image" content="https://namydad.xyz/images/namydad-frontpage.png">
+    <meta name="twitter:image" content="https://namy.dad/images/namydad-frontpage.png">
     
 <!--#### END Meta Tags social media preview images  ####-->
 
@@ -200,6 +200,54 @@
                 <span class="announcement-icon">🏆</span>
             </a>
         </div>
+
+        <!-- THANK YOU POPUP -->
+        <div class="thankyou-popup" id="thankyouPopup">
+            <div class="thankyou-popup-content">
+                <button class="thankyou-popup-close" id="thankyouClose">&times;</button>
+                <div class="thankyou-popup-icon"><i class="fas fa-heart"></i></div>
+                <h3>A Message for You</h3>
+                <p>As 2025 comes to a close, I wanted to share something special with everyone who has been part of this incredible year.</p>
+                <a href="thankyou.html" class="thankyou-popup-btn">
+                    <i class="fas fa-envelope-open-text"></i> READ MY THANK YOU
+                </a>
+            </div>
+        </div>
+
+        <script>
+            // Thank You Popup Logic
+            (function() {
+                const popup = document.getElementById('thankyouPopup');
+                const closeBtn = document.getElementById('thankyouClose');
+                const storageKey = 'thankyouPopup2025Seen';
+                
+                // Check if popup was already dismissed
+                if (!localStorage.getItem(storageKey) && popup) {
+                    // Show popup after a short delay
+                    setTimeout(() => {
+                        popup.classList.add('active');
+                    }, 2000);
+                }
+                
+                // Close popup
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        popup.classList.remove('active');
+                        localStorage.setItem(storageKey, 'true');
+                    });
+                }
+                
+                // Close on outside click
+                if (popup) {
+                    popup.addEventListener('click', (e) => {
+                        if (e.target === popup) {
+                            popup.classList.remove('active');
+                            localStorage.setItem(storageKey, 'true');
+                        }
+                    });
+                }
+            })();
+        </script>
         
         <!-- HERO SECTION -->
         <div class="hero-card fadein">
