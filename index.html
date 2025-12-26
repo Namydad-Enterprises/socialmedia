@@ -201,53 +201,7 @@
             </a>
         </div>
 
-        <!-- THANK YOU POPUP -->
-        <div class="thankyou-popup" id="thankyouPopup">
-            <div class="thankyou-popup-content">
-                <button class="thankyou-popup-close" id="thankyouClose">&times;</button>
-                <div class="thankyou-popup-icon"><i class="fas fa-heart"></i></div>
-                <h3>A Message for You</h3>
-                <p>As 2025 comes to a close, I wanted to share something special with everyone who has been part of this incredible year.</p>
-                <a href="thankyou.html" class="thankyou-popup-btn">
-                    <i class="fas fa-envelope-open-text"></i> READ MY THANK YOU
-                </a>
-            </div>
-        </div>
 
-        <script>
-            // Thank You Popup Logic
-            (function() {
-                const popup = document.getElementById('thankyouPopup');
-                const closeBtn = document.getElementById('thankyouClose');
-                const storageKey = 'thankyouPopup2025Seen';
-                
-                // Check if popup was already dismissed
-                if (!localStorage.getItem(storageKey) && popup) {
-                    // Show popup after a short delay
-                    setTimeout(() => {
-                        popup.classList.add('active');
-                    }, 2000);
-                }
-                
-                // Close popup
-                if (closeBtn) {
-                    closeBtn.addEventListener('click', () => {
-                        popup.classList.remove('active');
-                        localStorage.setItem(storageKey, 'true');
-                    });
-                }
-                
-                // Close on outside click
-                if (popup) {
-                    popup.addEventListener('click', (e) => {
-                        if (e.target === popup) {
-                            popup.classList.remove('active');
-                            localStorage.setItem(storageKey, 'true');
-                        }
-                    });
-                }
-            })();
-        </script>
         
         <!-- HERO SECTION -->
         <div class="hero-card fadein">
