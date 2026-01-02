@@ -974,6 +974,121 @@ section {
 .status-progress { color: var(--tech-blue); border: 1px solid var(--tech-blue); }
 .status-completed { color: #0f0; border: 1px solid #0f0; }
 
+/* Cosplan Preview Hover Effect */
+.cosplan-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.cosplan-preview {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%) translateX(-10px);
+    width: 200px;
+    background: rgba(10, 10, 15, 0.95);
+    border: 2px solid var(--tech-blue);
+    border-radius: 8px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 0 20px rgba(51, 102, 255, 0.4), 
+                inset 0 0 30px rgba(51, 102, 255, 0.1);
+}
+
+.cosplan-preview::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 10px solid transparent;
+    border-left-color: var(--tech-blue);
+}
+
+.cosplan-item:hover .cosplan-preview {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+.cosplan-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+}
+
+.cosplan-preview .preview-info {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.cosplan-preview .preview-info h4 {
+    margin: 0;
+    color: var(--accent-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.cosplan-preview .preview-info p {
+    margin: 2px 0 0;
+    color: var(--secondary-accent);
+    font-size: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.cosplan-preview .preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.cosplan-preview .preview-placeholder i {
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.cosplan-preview .preview-placeholder p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* Responsive: Move preview below on smaller screens */
+@media (max-width: 768px) {
+    .cosplan-preview {
+        position: absolute;
+        top: 100%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        width: 180px;
+    }
+    
+    .cosplan-preview::after {
+        top: auto;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 10px solid transparent;
+        border-bottom-color: var(--tech-blue);
+    }
+    
+    .cosplan-item:hover .cosplan-preview {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 /* Mission Log / Timeline */
 .mission-timeline {
     position: relative;
@@ -1428,6 +1543,59 @@ button:focus-visible,
     opacity: 0.9;
     margin: 0;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Instagram Embeds Grid */
+.instagram-embeds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.instagram-embed-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instagram-embed-wrapper iframe {
+    border: 2px solid var(--tech-blue) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 20px rgba(51, 102, 255, 0.3);
+    max-width: 100%;
+    background: #fff;
+}
+
+.embed-credit {
+    margin-top: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    text-align: center;
+}
+
+.embed-credit i {
+    margin-right: 5px;
+    color: var(--tech-blue);
+}
+
+@media (max-width: 768px) {
+    .instagram-embeds-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .instagram-embed-wrapper {
+        max-width: 100%;
+    }
+    
+    .instagram-embed-wrapper iframe {
+        width: 100% !important;
+        min-width: 280px;
+    }
 }
 
 /* ===== STATS PAGE STYLES ===== */
