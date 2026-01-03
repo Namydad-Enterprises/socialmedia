@@ -1,6 +1,29 @@
 /* Custom Sci-Fi Theme Overrides */
 /* Extracted from index.html */
 
+/* ===== MANA FONT STYLES ===== */
+@font-face {
+    font-family: 'Mana';
+    src: url('../fonts/mana.eot');
+    src: url('../fonts/mana.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mana.woff2') format('woff2'),
+         url('../fonts/mana.woff') format('woff'),
+         url('../fonts/mana.ttf') format('truetype'),
+         url('../fonts/mana.svg#mana') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ms {
+    font-family: 'Mana' !important;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* ===== GLOBAL OVERFLOW FIX ===== */
 html, body {
     overflow-x: hidden;
